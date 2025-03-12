@@ -71,8 +71,6 @@ cog predict -i prompt="What is the capital of France?"
 # Image + text query
 cog predict -i prompt="Describe this image in detail" -i image=@bee.jpg
 
-# With custom parameters
-cog predict -i prompt="Describe this image in detail" -i image=@bee.jpg -i temperature=0.5 -i max_new_tokens=1024
 ```
 
 ### API Usage
@@ -94,18 +92,6 @@ output = replicate.run(
 print(output)
 ```
 
-## Parameters
-
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `prompt` | Text prompt for the model | Required |
-| `image` | Optional image input for multimodal tasks | None |
-| `system_prompt` | System prompt to guide the model's behavior | "You are a helpful assistant." |
-| `max_new_tokens` | Maximum number of tokens to generate | 512 |
-| `temperature` | Sampling temperature (0.0 to 2.0) | 0.7 |
-| `top_p` | Top-p sampling (0.0 to 1.0) | 0.9 |
-| `top_k` | Top-k sampling (0 to 100) | 50 |
-
 ## Model Details
 
 - **Model Family**: Gemma 3
@@ -113,13 +99,6 @@ print(output)
 - **Context Window**: 128K tokens
 - **Training Data**: Trained on a diverse dataset including web documents, code, mathematics, and images
 - **License**: [Gemma License](https://ai.google.dev/gemma/terms)
-
-## Limitations
-
-- May occasionally generate incorrect or hallucinated information
-- Performance varies depending on the complexity of the task
-- Image understanding capabilities have limitations compared to specialized vision models
-- May reflect biases present in the training data
 
 ## Acknowledgments
 
